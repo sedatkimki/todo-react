@@ -1,0 +1,28 @@
+.form {
+  &-input,  &:focus {
+    background-image:url("../../icons/enter-icon.svg");
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-origin: content-box;
+    background-position: right;
+    background-color:white;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline:0;
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-med;
+    width: 100%;
+    @include breakpoint-down(medium){
+      font-size: $font-sm;
+    }
+    &::placeholder { 
+      color: $gray;
+      font-size: $font-med;
+      opacity: 1; 
+      @include breakpoint-down(medium){
+        font-size: $font-sm;
+      }
+    }
+  }
+}

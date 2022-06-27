@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import List from "./components/List/List";
+import TextInput from "./components/TextInput/TextInput";
+import { useContext } from "react";
+import { TaskContext } from "./contexts/taskContex";
 
+import "./styles/styles.scss";
 function App() {
+  const { unCompletedTasks, completedTasks, setCompletedTasks } =
+    useContext(TaskContext);
+  const handleDelete = () => {
+    setCompletedTasks([]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App ">
+      <Header />
+      <TextInput />
+      <p className="container container-pall label">Uncompleted Tasks</p>
+      <List tasks={unCompletedTasks} className="list-uncompleted" />
+      <div className="flex flex-jc-sb flex-ai-c container container-pall ">
+        <p className="label">Completed Tasks</p>
+        <button onClick={handleDelete} className="btn btn-warning">
+          Delete All
+        </button>
+      </div>
+      <List tasks={completedTasks} className="list-completed" />
     </div>
   );
 }

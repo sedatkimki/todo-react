@@ -1,0 +1,134 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  line-height: 1.3;
+  font-family: 'Poppins', sans-serif;
+  color: $font-color;
+  background-color: $lightGray;
+}
+
+h1,h2,h3 {
+  margin-top: 0;
+}
+
+a,a:visited, a:hover{
+  text-decoration: none;
+}
+
+
+
+// Spacing 
+.container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+  &-pt{
+    padding-top: 2.25rem;
+  }
+  &-pr{
+    padding-right: 1.5rem;
+  }
+  &-pl{
+    padding-left: 1.5rem;
+  }
+  &-pb{
+    padding-bottom: 2.25rem;
+  }
+  &-py {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+  &-px {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  &-pall{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+//felx 
+.flex {
+  display: flex;
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-fs {
+    justify-content: flex-start;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+  &-ai-fs {
+    align-items: flex-start;
+  }
+}
+
+// box 
+.box {
+  padding: 0.7rem  1rem;
+  border-radius: 10px;
+  background-color: white;
+  &-border{
+    border: 1px solid $gray;
+  }
+}
+
+.label{
+  font-size: $font-med;
+  color: $gray;
+  @include breakpoint-down(medium){
+    font-size: $font-sm;
+  }
+  transition: all 200ms ease-in-out;
+}
+
+//button 
+.btn {
+  display: inline-block;
+  border: 1px solid $gray;
+  border-radius: 10px;
+  background-color: white;
+  margin: 0px;
+  padding: 0.5rem 1rem ;
+  text-decoration: none;
+  color: $gray;
+  font-size: $font-sm;
+  &-active{
+    color: $success;
+    background-color: $successLight;
+    border: 1px solid $successBorder;
+  }
+  &-warning{
+    color: $warning;
+    background-color: $warningLight;
+    border: 1px solid $warningBorder;
+  }
+  &-circle{
+    >img {
+      width: 20px;
+    }
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-radius: 50%;
+    padding: 0.2rem;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,22 @@
+.list{
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-med;
+    @include breakpoint-down(medium){
+      font-size: $font-sm;
+    }
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+    transition: all 200ms ease-in-out;
+  }
+  &-completed{
+    opacity: 0.6;
+    text-decoration: line-through;
+    >button {
+      display: none;
+    }
+  }
+}
