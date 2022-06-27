@@ -3,7 +3,6 @@ import List from "./components/List/List";
 import TextInput from "./components/TextInput/TextInput";
 import { useContext } from "react";
 import { TaskContext } from "./contexts/taskContex";
-
 import "./styles/styles.scss";
 function App() {
   const { unCompletedTasks, completedTasks, setCompletedTasks } =
@@ -24,6 +23,9 @@ function App() {
         </button>
       </div>
       <List tasks={completedTasks} className="list-completed" />
+      <p className="label container container-pall">
+        Made with &#128150; by sedat
+      </p>
     </div>
   );
 }
